@@ -1,2 +1,3 @@
 # kwetzel8.github.io
-My repository, presumably for my resume
+Hi Professor. This is the README file!
+Feel free to do anything with my resume, including sending it to potential employers.
