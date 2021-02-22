@@ -1,13 +1,50 @@
 body {
-  font-family: Georgia;
-  background-color: grey;
+    font-family: verdana;
+    background-color: lightgrey;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+    color: rgb(47, 45, 44);
 }
 
 h1 {
-  color: black;
-  text-align: center;
+    color: black;
+    text-align: center;
+    font-size: 48px;
 }
 
-p {
-  font-size: 12px;
+h2 {
+    color: black;
+    font-size: 24px;
+    text-align: center;
+}
+
+h3 {
+    text-decoration: underline;
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+.jobtitle {
+    font-style: italic;
+    font-size: 14px;
+    padding-left: 75px;
+}
+.jobinfo {
+    font-style: bold;
+    text-decoration: underline;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+#jobdesc {
+    padding-left: 75px;
+}
+
+#sec-bordered {
+    border-style: groove;
 }
