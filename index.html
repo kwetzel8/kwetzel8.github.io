@@ -8,7 +8,12 @@
     </head>
     <body> 
         <header>
-            <h1 id="MyNameText" onclick="ColorChange()"> Kyle Wetzel </h1>
+            <h1 id="myName" > Kyle Wetzel </h1>
+            <div class="container">
+                <div class="vertical-center">
+                    <button onclick="redColorChange()">Red</button> <button onclick="blueColorChange()">Blue</button> <button onclick="greenColorChange()">Green</button> <button onclick="purpleColorChange()">Purple</button> <button onclick="blackColorChange()">Reset</button>
+                </div>
+            </div>
             <h2> Kent, Ohio 44243  |  440-409-6401  |  <a href="mailto:kylejwetzel@gmail.com">kylejwetzel@gmail.com</a>  |  <a href="https://www.linkedin.com/in/kyle-wetzel">linkedin.com/in/kyle-wetzel</a> </h2>
         </header>
         <main>
@@ -72,8 +77,16 @@
             </section>
         </main>
         <script>
-            function ColorChange() { 
-                document.getElementById("MyNameText").style.color = "red";}
+            function redColorChange() { 
+                document.getElementById("myName").style.color = "red";}
+            function blueColorChange() { 
+                document.getElementById("myName").style.color = "blue";}
+            function greenColorChange() { 
+                document.getElementById("myName").style.color = "green";}
+            function purpleColorChange() { 
+                document.getElementById("myName").style.color = "purple";}
+            function blackColorChange() { 
+                document.getElementById("myName").style.color = "black";}
         </script>
     </body>
 </html>
