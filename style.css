@@ -48,3 +48,24 @@ h4 {
 #sec-bordered {
     border-style: groove;
 }
+
+button {
+    color: black;
+    text-align: center;
+    font-size: 24px;
+}
+
+.container {
+  height: 100px;
+  position: relative;
+  border: 3px solid black;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 37%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
