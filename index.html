@@ -8,7 +8,7 @@
     </head>
     <body> 
         <header>
-            <h1> Kyle Wetzel </h1>
+            <h1 id="MyNameText" onclick="ColorChange()"> Kyle Wetzel </h1>
             <h2> Kent, Ohio 44243  |  440-409-6401  |  <a href="mailto:kylejwetzel@gmail.com">kylejwetzel@gmail.com</a>  |  <a href="https://www.linkedin.com/in/kyle-wetzel">linkedin.com/in/kyle-wetzel</a> </h2>
         </header>
         <main>
@@ -71,5 +71,10 @@
                                 </ul>
             </section>
         </main>
+        <script>
+            function ColorChange() { 
+                MyName = document.getElementById("MyNameText").innerHTML;
+                MyName.style.color = 'blue';
+        </script>
     </body>
 </html>
