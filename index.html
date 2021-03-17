@@ -1,92 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> 
-            Kyle Wetzel's Resume
-        </title>  
-        <link rel="stylesheet" href="style.css">
+        <title>
+            API Assignment
+        </title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body> 
-        <header>
-            <h1 id="myName" > Kyle Wetzel </h1>
-            <div class="container">
-                <div class="vertical-center">
-                    <button onclick="redColorChange()">Red</button> <button onclick="blueColorChange()">Blue</button> <button onclick="greenColorChange()">Green</button> <button onclick="purpleColorChange()">Purple</button> <button onclick="blackColorChange()">Reset</button>
-                </div>
-            </div>
-            <h2> Kent, Ohio 44243  |  440-409-6401  |  <a href="mailto:kylejwetzel@gmail.com">kylejwetzel@gmail.com</a>  |  <a href="https://www.linkedin.com/in/kyle-wetzel">linkedin.com/in/kyle-wetzel</a> </h2>
-        </header>
+            <input type="button" id="newButton" onclick="getSWChar()" value= "Get Random Star Wars Character Info!">
         <main>
-            <section id="sec-bordered">
-            <h3>Education:</h3>
-               <p> Kent State University | Kent, Ohio</p>
-                   <p>Bachelor of Digital Sciences</p>
-                   <p>Expected Graduation: May. 2021</p>
-                    <p>Major: Digital Sciences | GPA: 3.41</p>
-                <p>Lakeland Community College | Kirtland, Ohio</p>
-                    <p>Associate of Science (IT)</p>
-                    <p>Graduation: May 2018</p>
-                <h4>Certifications:</h4>
-                    <p>CompTIA A+ (former), CompTIA Net+ (former), OSHA 6 Hour Safety Training, IC3-GS4, CompTIA Security+ (in progress)</p>
-                <h4>Significant Coursework:</h4>
-                    <p>Digital Systems Security, Database Management, Telecom Infrastructure, Digital Info. Mgmt, Python Programming, Information Fluency, Principles of Management, My Story on the Web (Multimedia), Digital Systems Security</p>
-                <h4>Core Competencies:</h4>
-                    <p>Troubleshooting, Written Communication, Oral Communication, Project Coordination, Workplace Efficiency, Problem Solving, Teamwork, Digital Technology</p>
-            <h4>Computer Skills:</h4>
-                <p>Microsoft Office: Word, PowerPoint, Excel, Publisher, Outlook</p>
-                <p>Applications: Basic SQL, network switch / router configuration, intermediate network security concepts, Microsoft Windows Server environment, familiar with several helpdesk applications such as SpiceWorks and Remedy</p>
-                <p>Programs: Adobe Acrobat, Active Directory, Windows 7 and 10, PXE and WDS deployment.</p>
-            </section>
-            <section id="sec-bordered">
-                <h3>Work Experience: </h3>
-                    <p class="jobinfo">Progressive Insurnace | Remote | Aug 2020 - Jan 2021</p>
-                        <p class="jobtitle">IT Service Desk</p>
-                        <ul id="jobdesc">
-                            <li>Took phone calls from internal customers over the phone and through skype/teams to resolve their issues.</li>
-                            <li>Worked independently and in coordination with a team to answer phone calls, create tickets, and resolve issues.</li>
-                            <li>Gained experience working as part of a large helpdesk, as well as working remotely.</li>
-                        </ul>
-                    <p class="jobinfo">Onyx Creative | Warrensville Heights, Ohio | Jun 2018 – May 2019</p>
-                            <p class="jobtitle">IT Intern</p>
-                            <ul id="jobdesc">
-                                <li>Implemented SpiceWorks helpdesk / ticketing system.</li>
-                                <li>Worked independently and in coordination with a team to answer phone calls, create tickets, and resolve issues.</li>
-                                <li>Configured and deployed many laptop-dock combo’s to lifecycle end user’s desktops.</li>
-                                <li>Created a map of network and phone drops and activated network ports when end users moved desk locations</li>
-                                <li>Managed blacklist entries of Barracuda e-mail and web filter.</li>
-                                <li>Provided assistance / advice to, and answered questions for end users.</li>
-                                <li>Communicated with end users both on and offsite to resolve their issues.</li>
-                            </ul>
-                    <p class="jobinfo">Cornerstone IT | Mentor, Ohio | Feb 2018 – May 2018</p>
-                                <p class="jobtitle">IT Service Desk</p>
-                                <ul id="jobdesc">
-                                    <li>Worked independently in a fast-paced environment while developing customer service skills with each client to ensure their needs were consistently met.</li>
-                                    <li>Professionally communicated with external clients over the phone, e-mail, and in person.</li>
-                                    <li>Transported computers, monitors, servers, and other hardware to and from client sites.</li>
-                                    <li>Prepared windows machines for deployment using PXE boot and WDS.</li>
-                                </ul>
-                    <p class="jobinfo">Lake Erie College | Painesville, Ohio | Sept. 2016 – May 2017</p>
-                                <p class="jobtitle">IT Helpdesk Support Technician</p>
-                                <ul id="jobdesc">
-                                    <li>Collaborated with network administrators, contributing to the workflow</li>
-                                    <li>Server maintenance, end user computer repair / replacement, network hardware deployment.</li>
-                                    <li>Ran wiring for and installed 50+ access points in student dorms.</li>
-                                    <li>Used AD to reset end user passwords, remove old accounts and re-do naming scheme.</li>
-                                    <li>Provided support for, and resolved issues of users over e-mail, phone, and in person.</li>
-                                </ul>
-            </section>
+            <div id="charInfo"> </div>
         </main>
         <script>
-            function redColorChange() { 
-                document.getElementById("myName").style.color = "red";}
-            function blueColorChange() { 
-                document.getElementById("myName").style.color = "blue";}
-            function greenColorChange() { 
-                document.getElementById("myName").style.color = "green";}
-            function purpleColorChange() { 
-                document.getElementById("myName").style.color = "purple";}
-            function blackColorChange() { 
-                document.getElementById("myName").style.color = "black";}
+            function getSWChar(){
+              var randNum = Math.floor(Math.random() * 100);
+              $.getJSON("https://swapi.dev/api/people/" + randNum + "/", function(result){
+              console.log(result);
+              $("#charInfo").append("<p>" + result.name + " is a " + result.gender + ", weighs " + result.mass + " kg, and is " + result.height + "cm tall!" + "</p>");
+            })
+          }
         </script>
     </body>
 </html>
