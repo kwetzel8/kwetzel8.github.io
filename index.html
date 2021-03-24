@@ -1,24 +1,149 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            API Assignment
-        </title>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body> 
-            <input type="button" id="newButton" onclick="getSWChar()" value= "Get Random Star Wars Character Info!">
-        <main>
-            <div id="charInfo"> </div>
-        </main>
-        <script>
-            function getSWChar(){
-              var randNum = Math.floor(Math.random() * 100);
-              $.getJSON("https://swapi.dev/api/people/" + randNum + "/", function(result){
-              console.log(result);
-              $("#charInfo").append("<p>" + result.name + " is a " + result.gender + ", weighs " + result.mass + " kg, and is " + result.height + "cm tall!" + "</p>");
-            })
-          }
-        </script>
-    </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+     <title>Kyle Wetzel's Resume</title>
+
+     <style type="text/css">
+        * { margin: 0; padding: 0; }
+        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(images/noise.jpg); }
+        .clear { clear: both; }
+        #page-wrap { width: 800px; margin: 40px auto 60px; }
+        #pic { float: right; margin: -30px 0 0 0; }
+        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
+        h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
+        h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
+        p { margin: 0 0 16px 0; }
+        a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
+        a:hover { border-bottom-style: solid; color: black; }
+        ul { margin: 0 0 32px 17px; }
+        #objective { width: 500px; float: left; }
+        #objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
+        dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
+        dd { width: 600px; float: right; }
+        dd.clear { float: none; margin: 0; height: 15px; }
+     </style>
+</head>
+
+<body>
+
+    <div id="page-wrap">
+    
+        <img src="me.jpg" alt="Photo of Me!" id="pic" />
+    
+        <div id="contact-info" class="vcard">
+        
+            <!-- Microformats! -->
+        
+            <h1 class="fn">Kyle Wetzel</h1>
+        
+            <p>
+                Cell: <span class="tel">440-409-6401</span><br />
+                Email: <a class="email" href="mailto:kylejwetzel@gmail.com">kylejwetzel@gmail.com</a><br>
+                LinkedIn: <a class="linkedin" href="https://www.linkedin.com/in/kyle-wetzel/">linkedin.com/kyle-wetzel/</a>
+            </p>
+        </div>
+
+        <div class="clear"></div>
+        
+        <dl>
+            <dd class="clear"></dd>
+            
+            <dt>Education</dt>
+            <dd>
+                <h2>Kent State University</h2>
+                <p><strong>Major:</strong> Digital Sciences<br /></p>
+            </dd>
+            
+            <dd class="clear"></dd>
+            
+            <dt>Skills</dt>
+            <dd>
+                <h2>Certifications</h2>
+                <p>CompTIA A+ (former), CompTIA Net+ (former), OSHA 6 Hour Safety Training, IC3-GS4, CompTIA Security+ (in progress)</p>
+                
+                <h2>Computer skills</h2>
+                <p>Microsoft Office: Word, PowerPoint, Excel, Publisher, Outlook
+                  Applications: Basic SQL, network switch / router configuration, intermediate network security concepts, Microsoft Windows Server environment, familiar with several helpdesk applications such as SpiceWorks and Remedy.
+                  Programs: Adobe Acrobat, Active Directory, Windows 7 and 10, PXE and WDS deployment.
+                </p>
+
+                <h2>Significant Coursework</h2>
+                <p>Digital Systems Security, Database Management, Telecom Infrastructure, Digital Info. Mgmt, Python Programming, Information Fluency, Principles of Management, My Story on the Web (Multimedia), Digital Systems Security</p>
+
+                <h2>Core Competencies</h2>
+                <p>Troubleshooting 
+                  Written Communication
+                  Oral Communication 
+                  Project Coordination 
+                  Workplace Efficiency
+                  Problem Solving
+                  Teamwork
+                  Digital Technology 
+                  </p>
+            </dd>
+            
+            <dd class="clear"></dd>
+            
+            <dt>Experience</dt>
+            <dd>
+                <h2>Progressive Insurance <br/><span>IT Service Desk - Remote - Aug 2020 – Jan 2021</span></h2>
+                <ul>
+                    <li>Took phone calls from internal customers over the phone and through skype/teams to resolve their issues.</li>
+                    <li>Worked independently and in coordination with a team to answer phone calls, create tickets, and resolve issues.</li>
+                    <li>Gained experience working as part of a large helpdesk, as well as working remotely.</li>
+                </ul>
+                
+                <h2>Onyx Creative <br/><span>IT Intern - Warrensville Heights, Ohio - Jun 2018 – May 2019</span></h2>
+                <ul>
+                    <li>Implemented SpiceWorks helpdesk / ticketing system.</li>
+                    <li>Worked with file sharing permissions of end users, ensuring protocols were followed.</li>
+                    <li>Configured and deployed many laptop-dock combo’s to lifecycle end user’s desktops.</li>
+                    <li>Created a map of network and phone drops and activated network ports when end users moved desk locations.</li>
+                    <li>Managed blacklist entries of Barracuda e-mail and web filter.</li>
+                    <li>Provided assistance / advice to, and answered questions for end users.</li>
+                    <li>Communicated with end users both on and offsite to resolve their issues.</li>
+                </ul> 
+
+                <h2>Cornerstone IT <br/><span>IT Service Desk - Mentor, Ohio - Feb 2018 – May 2018</span></h2>
+                <ul>
+                    <li>Worked independently in a fast-paced environment while developing customer service skills with each client to ensure their needs were consistently met.</li>
+                    <li>Professionally communicated with external clients over the phone, e-mail, and in person.</li>
+                    <li>Transported computers, monitors, servers, and other hardware to and from client sites.</li>
+                    <li>Prepared windows machines for deployment using PXE boot and WDS.</li>
+                </ul> 
+
+                <h2>Lake Erie College <br/><span>IT Support - Painesville, Ohio - Sept. 2016 – May 2017</span></h2>
+                <ul>
+                    <li>Collaborated with network administrators, contributing to the workflow.</li>
+                    <li>Server maintenance, end user computer repair / replacement, network hardware deployment.</li>
+                    <li>Ran wiring for and installed 50+ access points in student dorms.</li>
+                    <li>Used AD to reset end user passwords, remove old accounts and re-do naming scheme.</li>
+                    <li>Provided support for, and resolved issues of users over e-mail, phone, and in person.</li>
+                </ul> 
+            </dd>
+            
+            <dd class="clear"></dd>
+            
+            <dt>Hobbies</dt>
+            <dd>Cars, Motorcycles, ATV's, Dirt Bikes, Lifting, Climbing, Hiking, Camping, Video Games, PC Building, DIY</dd>
+            
+            <dd class="clear"></dd>
+            
+            <dt>References</dt>
+            <dd>Available on request</dd>
+            
+            <dd class="clear"></dd>
+        </dl>
+        
+        <div class="clear"></div>
+    
+    </div>
+
+</body>
+
 </html>
